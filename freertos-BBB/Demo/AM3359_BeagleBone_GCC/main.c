@@ -1,4 +1,3 @@
-
 /*
     FreeRTOS V7.0.1 - Copyright (C) 2011 Real Time Engineers Ltd.
 
@@ -226,11 +225,13 @@ pvParameters= pvParameters;
 		
 		(*(REG32(GPIO1_BASE + GPIO_CLEARDATAOUT))) = PIN19;
 		(*(REG32(GPIO1_BASE + GPIO_CLEARDATAOUT))) = PIN17;
+		(*(REG32(GPIO1_BASE + GPIO_CLEARDATAOUT))) = (PIN21|PIN22|PIN23|PIN24);
 
 		vTaskDelayUntil(&xLastWakeTime, xFrequency);
 		
 		(*(REG32(GPIO1_BASE + GPIO_SETDATAOUT))) = PIN19;
 		(*(REG32(GPIO1_BASE + GPIO_SETDATAOUT))) = PIN17;
+		(*(REG32(GPIO1_BASE + GPIO_SETDATAOUT))) = (PIN21|PIN22|PIN23|PIN24);
 		
 		vTaskDelayUntil(&xLastWakeTime, xFrequency);
 	}
